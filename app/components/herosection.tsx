@@ -1,28 +1,18 @@
 
-
-
-// <div className="flex flex-col md:flex-row  items-center mr-10 ml-10   text-white    bg-indigo-950 ">  
-//     <div className="md:w-1/2 md:pr-8 p-5  mt-10 gap-5 h-[400px]">  
-//         <h1 className="text-4xl md:text-5xl mb-6">The Furniture Brand for the Future, with Timeless Designs</h1>  
-//         <button className=" bg-gray-600 text-white py-2 px-4  hover:bg-yellow-300 transition duration-200">View Collection</button> 
-//         <span className="block text-blue-700">------------------------------------------------------------------------------------------------------------------------</span>  
-//         <p className="pt-20 text-lg">  
-//             A new era in eco-friendly furniture with Avelon, the French luxury retail brand featuring elegant fonts, tasteful colors, and a beautiful way to showcase products digitally using modern web technologies.  
-//         </p>  
-//     </div>  
-//     <div className="md:w-1/2 mt-6 md:mt-0">  
-//         <img src="/hero-section.jpg" alt="Modern chair" className="w-full h-auto shadow-lg"/>  
-//     </div>  
-// </div>
-     
-
-
-
-
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+
+import { useRouter } from 'next/router'; // Next.js ke liye  
+
+
 
 const Hero = () => {
+
+
+
+
   return (
     <div className="flex justify-center items-center">
       <div className="w-full max-w-screen-xl h-auto bg-[#F0F2F3] flex flex-col sm:flex-row justify-between items-center px-6 sm:px-10 lg:px-16 py-6">
@@ -33,7 +23,9 @@ const Hero = () => {
           <p className="w-full sm:w-[557px] text-[40px] sm:text-[60px] font-bold text-center sm:text-left mb-6">
             Best Furniture Collection for your interior.
           </p>
-          <button className="bg-[#029FAE] w-[171px] text-white py-3 px-6 rounded-[8px] flex items-center gap-[20px] hover:bg-blue-700 mx-auto sm:mx-0">
+           <Link href="/shop">
+          <button 
+            className="bg-[#029FAE] w-[171px] text-white py-3 px-6 rounded-[8px] flex items-center gap-[20px] hover:bg-blue-700 mx-auto sm:mx-0">
             <span>Shop Now</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +42,8 @@ const Hero = () => {
               />
           </svg>
           </button>
+</Link>
+      
         </div>
         <div className="w-full sm:w-1/2 mt-6 sm:mt-0 sm:ml-[130px] flex justify-center">
           <Image
@@ -63,5 +57,6 @@ const Hero = () => {
     </div>
   );
 };
+
 
 export default Hero;

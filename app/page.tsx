@@ -7,6 +7,7 @@ import Feature from "./components/feature";
 import ProductCard from "./components/ourprod";
 
 
+
 export default function Home() {
   return (
     <>
@@ -15,6 +16,8 @@ export default function Home() {
       <Feature/>
       <Categories />
       <ProductCard/>
+      
+     
   
       
      
@@ -45,3 +48,10 @@ export default function Home() {
 // };
 
 // export default HomePage;
+
+
+
+
+
+
+

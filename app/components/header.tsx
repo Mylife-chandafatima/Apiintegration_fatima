@@ -1,6 +1,5 @@
 
-
-
+import { FaGifts } from "react-icons/fa6";
 
 import { FaShoppingCart } from "react-icons/fa";
 import Image from "next/image";
@@ -20,6 +19,14 @@ const Header = () => {
           />
           <h2 className="text-[26px] font-medium">Comforty</h2>
         </div>
+        
+       <div className="flex gap-10 ">
+
+        <div className="text-red-600 ">
+          <Link href ="/gift">
+          <FaGifts className="h-11 w-20 hover:text-yellow-400 cursor-pointer" />
+        </Link>
+        </div>
         <Link href="/cart">
           <button className="flex items-center space-x-2 bg-white py-2 px-4 rounded-md mr-3">
             <FaShoppingCart className="text-xl" />
@@ -29,6 +36,7 @@ const Header = () => {
             </div>
           </button>
         </Link>
+        </div>
       </div>
     </div>
   );

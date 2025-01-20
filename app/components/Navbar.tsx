@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import {AllProduct} from "./allProduct";
+import AllProduct from "./allProduct";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -28,6 +28,9 @@ const Navbar = () => {
           </Link>
           <Link href="/about" className="text-[14px] font-medium">
             About
+          </Link>
+          <Link href="/login" className="text-[14px] font-medium">
+            Login
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
@@ -79,6 +82,7 @@ const Navbar = () => {
           <Link href="/about" className="text-[14px] font-medium">
             About
           </Link>
+          
         </div>
       )}
     </nav>
