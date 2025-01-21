@@ -58,20 +58,24 @@ const ProductsPage = () => {
   const removeFromCart = (productId: string) => {
     setCart((prevCart) => prevCart.filter((item) => item._id !== productId));
   };
-  
+
+
   const searchProductByName = () => {
-    if (!searchName) {
-      setFilteredProducts(products); // Reset to all products if search is empty
+    console.log("Search term:", searchName.trim());
+    if (!searchName.trim()) {
+      console.log("Resetting to all products");
+      setFilteredProducts(products);
       return;
     }
-
+  
     const filtered = products.filter((product) =>
       product.title.toLowerCase().includes(searchName.toLowerCase())
     );
-
+  
+    console.log("Filtered Products:", filtered);
     setFilteredProducts(filtered);
   };
-
+  
   if (loading)
     return <p className="text-center text-lg font-medium">Loading products...</p>;
 
@@ -99,46 +103,18 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Display Filtered Products */}
-      {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+     
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5  m-28 justify-center items-center">
         {filteredProducts.map((product) => (
           <div
             key={product._id}
-            className="border rounded-lg shadow p-4 hover:shadow-md transition-shadow"
+           
           >
             {product.imageUrl && (
               <img
                 src={product.imageUrl}
                 alt={product.title}
-                className="w-full object-cover rounded-lg transition-transform duration-300 hover:scale-110" 
-              />
-            )}
-            <div className="mt-4">
-              <h3 className="text-xl font-semibold">{product.title}</h3>
-              <p className="text-green-600 font-medium mt-2">
-                Price: ${product.price}
-              </p>
-              <button
-                onClick={() => addToCart(product)}
-                className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-              >
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        ))}
-      </div> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {filteredProducts.map((product) => (
-          <div
-            key={product._id}
-            className="border rounded-lg shadow p-4 hover:shadow-md transition-shadow"
-          >
-            {product.imageUrl && (
-              <img
-                src={product.imageUrl}
-                alt={product.title}
-                className="w-full object-cover rounded-lg transition-transform duration-300 hover:scale-110"
+                className="w-100  rounded-lg transition-transform duration-300 hover:scale-110"
               />
             )}
             <div className="mt-4">
@@ -150,19 +126,20 @@ const ProductsPage = () => {
               <p className="text-green-600 font-medium mt-2">
                 Price: ${product.price}
               </p>
-       
+       <Link href="/cart">
               <button
                 onClick={() => addToCart(product)}
                 className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
               >
                 Add to Cart
               </button>
+              </Link>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Cart Section */}
+      {/* Cart Section
       <div className="mt-10 border-2 border-red-600 pt-6">
         <h2 className="text-2xl font-bold mb-4">Cart</h2>
         {cart.length === 0 ? (
@@ -210,7 +187,7 @@ const ProductsPage = () => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

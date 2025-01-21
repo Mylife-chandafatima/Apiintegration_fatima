@@ -44,7 +44,7 @@ const ProductPage = async ({ params }: ProductProps) => {
   }
 
   return (
-    <div className="p-6 flex gap-10">
+    <div className="p-6 flex flex-col lg:flex-row  justify-center items-center  gap-10">
         <div>
       <h1 className="text-3xl font-bold">{product.title}</h1>
       <img src={product.imageUrl} alt={product.title} className="w-100  my-4" />

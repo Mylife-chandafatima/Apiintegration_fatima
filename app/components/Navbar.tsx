@@ -23,7 +23,7 @@ const Navbar = () => {
           <Link href="/product" className="text-[14px] font-medium">
             Product
           </Link>
-          <Link href="/faq" className="text-[14px] font-medium">
+          <Link href="/page" className="text-[14px] font-medium">
             Pages
           </Link>
           <Link href="/about" className="text-[14px] font-medium">
@@ -76,7 +76,7 @@ const Navbar = () => {
           <Link href="/product" className="text-[14px] font-medium">
             Product
           </Link>
-          <Link href="/faq" className="text-[14px] font-medium">
+          <Link href="/page" className="text-[14px] font-medium">
             Pages
           </Link>
           <Link href="/about" className="text-[14px] font-medium">

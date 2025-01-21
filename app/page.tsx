@@ -5,6 +5,7 @@ import CompanyLogo from "./components/logo";
 import Hero from "./components/herosection";
 import Feature from "./components/feature";
 import ProductCard from "./components/ourprod";
+import ProductCarousel from "./components/ProductCarousel";
 
 
 
@@ -16,7 +17,7 @@ export default function Home() {
       <Feature/>
       <Categories />
       <ProductCard/>
-      
+      <ProductCarousel/>
      
   
       

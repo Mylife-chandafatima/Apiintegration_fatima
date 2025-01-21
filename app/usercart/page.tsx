@@ -1,4 +1,4 @@
-import UserCartComponent from "@/components/userCart/UserCartComponent";
+import UserCartComponent from "../components/userCart/UserCartComponent";
 
 const UserCart = () => {
   return (

@@ -12,6 +12,9 @@ const Topbar = () => {
           <span>Free shipping on all orders over $50</span>
         </p>
         <ul className="text-white flex items-center space-x-4 font-normal text-center sm:text-left xs:text-left text-[10px] sm:text-[12px] xs:text-[12px]">
+          
+  
+          
           <li className="flex items-center space-x-1 cursor-pointer">
             <span>Eng</span>
             <ChevronDown />
@@ -24,9 +27,24 @@ const Topbar = () => {
             <span>Need Help</span>
           </li>
         </ul>
+
+
+ 
+
+
+
+
+
+
       </div>
     </div>
   );
 };
 
 export default Topbar;
+
+
+
+
+
+

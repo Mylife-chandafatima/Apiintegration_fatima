@@ -1,50 +1,97 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import axios from "axios";
+// const express = require('express');
+// const shippo = require('shippo');
+// const { saveOrder } = require('./orderService'); // Function to save order details
 
-export default async function shippoOrder(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== "POST") {
-        return res.status(405).json({ message: "Method Not Allowed" });
-    }
+// const router = express.Router();
 
-    const { addressFrom, addressTo, parcels, orderId, totalAmount } = req.body;
+// // Initialize Shippo API with your API key
+// const shippoClient = shippo(`ShippoToken shippo_test_ce5b4d777ed4efa27595b2c61e2b033a6cedc305`);
 
-    try {
-        const response = await axios.post(
-            "https://api.goshippo.com/shipments/",
-            {
-                address_from: addressFrom,
-                address_to: addressTo,
-                parcels,
-                async: false,
-            },
-            {
-                headers: {
-                    Authorization: `ShippoToken shippo_test_1892a121a35f0cb83796c297b5f150ef4ccfc753`,
-                    "Content-Type": "application/json",
-                },
-            }
-        );
+// // Order placement API
+// router.post('/orders', async (req, res) => {
+//   const { items, shippingAddress, paymentDetails } = req.body;
 
-        // Debug full response
-        console.log("Full Shipment Response:", response.data);
+//   // Calculate total weight of items (you can modify this logic based on item data)
+//   const totalWeight = items.reduce((sum, item) => sum + item.weight, 0);
 
-        // Extract tracking and shipment data
-        const shipment = response.data;
+//   // Create a Shippo address object
+//   const addressTo = {
+//     name: shippingAddress.name,
+//     street1: shippingAddress.addressLine1,
+//     city: shippingAddress.city,
+//     state: shippingAddress.state,
+//     zip: shippingAddress.zip,
+//     country: shippingAddress.country,
+//     email: shippingAddress.email,
+//   };
 
-        // Check for tracking data in the response object
-        const trackingNumber = shipment.object_id
+//   try {
+//     // Get shipping rates from Shippo
+//     const rates = await shippoClient.rates.create({
+//       address_from: {  // Your store's address (replace with your actual address)
+//         name: 'Your Store',
+//         street1: '123 Store St.',
+//         city: 'City',
+//         state: 'State',
+//         zip: '12345',
+//         country: 'US',
+//       },
+//       address_to: addressTo,
+//       parcels: [{
+//         length: 10,     // Length of your package (in inches)
+//         width: 5,       // Width of your package (in inches)
+//         height: 8,      // Height of your package (in inches)
+//         distance_unit: 'in',
+//         weight: totalWeight, // Total weight of your package (in pounds)
+//         mass_unit: 'lb',
+//       }],
+//     });
 
-        const eta = shipment.eta || "3-5 business days"; // Default ETA if not available
+//     // If rates are available, proceed to create the order
+//     if (rates && rates.results.length > 0) {
+//       // Choose the best shipping rate (you can customize this logic)
+//       const bestRate = rates.results[0];
 
-        res.status(200).json({
-            orderId,
-            totalAmount,
-            trackingNumber, // Pass the tracking number from the API
-            eta,            // Pass ETA from the API
-            status: "Shipment created successfully!",
-        });
-    } catch (error: any) {
-        console.error("Error creating shipment:", error.response?.data || error.message);
-        res.status(500).json({ message: "Failed to create shipment", error: error.response?.data });
-    }
-}
+//       // Create a shipping label (if needed)
+//       const shipment = await shippoClient.shipments.create({
+//         address_from: {  // Your store's address (replace with your actual address)
+//           name: 'Your Store',
+//           street1: '123 Store St.',
+//           city: 'City',
+//           state: 'State',
+//           zip: '12345',
+//           country: 'US',
+//         },
+//         address_to: addressTo,
+//         parcels: [{
+//           length: 10,     // Length of your package (in inches)
+//           width: 5,       // Width of your package (in inches)
+//           height: 8,      // Height of your package (in inches)
+//           distance_unit: 'in',
+//           weight: totalWeight, // Total weight of your package (in pounds)
+//           mass_unit: 'lb',
+//         }],
+//       });
+
+//       // If the shipment was created successfully, proceed to save the order
+//       const newOrder = await saveOrder({
+//         items,
+//         shippingAddress,
+//         paymentDetails,
+//         shippingRate: bestRate,
+//         shipmentLabel: shipment.label_url,  // URL of the shipping label
+//         datePlaced: new Date(),
+//         status: 'pending',
+//       });
+
+//       res.status(201).json({ message: 'Order placed successfully!', order: newOrder });
+//     } else {
+//       res.status(400).json({ error: 'No shipping rates available' });
+//     }
+//   } catch (error) {
+//     console.error('Error creating order:', error);
+//     res.status(500).json({ error: 'Failed to place order. Please try again later.' });
+//   }
+// });
+
+// module.exports = router;
