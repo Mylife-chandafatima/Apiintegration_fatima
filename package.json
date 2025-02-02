@@ -10,15 +10,18 @@
     "migrate": "node scripts/migrate.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.10.6",
     "@sanity/client": "^6.25.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.70.0",
     "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "lucide-react": "^0.472.0",
     "next": "14.2.15",
+    "next-auth": "^4.24.11",
     "next-sanity": "^9.8.37",
     "node-fetch": "^3.3.2",
     "nodemailer": "^6.9.16",

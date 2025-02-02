@@ -42,7 +42,7 @@ export default function Categories() {
                   alt={category.name}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   priority
-                  width={300}
+                  width={400}
                   height={400}
                 />
               </div>

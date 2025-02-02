@@ -240,12 +240,14 @@ const Page = () => {
       {/* Google Maps Embed */}
       <div className="mt-16 mb-10">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">Find Us On The Map</h2>
+      
         <iframe
-          className="w-full h-[400px] rounded-lg"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.789267925035!2d-73.987655!3d40.748817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259af9e2ba589%3A0xf945d0527b56e7c1!2s236%205th%20SE%20Avenue%2C%20New%20York%20NY10000%2C%20United%20States!5e0!3m2!1sen!2s!4v1632152920194!5m2!1sen!2s"
-          allowFullScreen=""
-          loading="lazy"
-        ></iframe>
+  className="w-full h-[400px] rounded-lg"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232412.2288501164!2d67.0427!3d24.8607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33d8b575cfebf%3A0xa0f66d0c8b1e93f!2sKarachi%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1649246585962!5m2!1sen!2s"
+  allowFullScreen=""
+  loading="lazy"
+/>
+
       </div>
 
 

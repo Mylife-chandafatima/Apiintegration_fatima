@@ -148,7 +148,7 @@ export default function Footer() {
             <ul className="mt-4 text-[#272343] space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/12"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Sofa
@@ -156,7 +156,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/6"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Armchair
@@ -164,7 +164,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/9"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Wing Chair
@@ -172,7 +172,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/5"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Desk Chair
@@ -180,7 +180,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/1"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Wooden Chair
@@ -188,7 +188,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="http://localhost:3000/shop/11"
                   className="hover:text-[#007580] hover:underline hover:underline-offset-4"
                 >
                   Park Bench

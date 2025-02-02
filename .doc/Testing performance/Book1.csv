@@ -1,0 +1,34 @@
+,,Testing and Backend Refinement,,,
+,,[Furniture Marketplace Chairs],,,
+Test ,Test Case Description ,Steps to Execute ,Expected Outcome ,Actual Outcome ,Status 
+Case ID ,,,,,
+TC-001,Login ,1.               Open the login page. ,User should be redirected to the home page. ,Passed. User was redirected to the home page after login. ,Passed 
+1,Functionality ,2.               Enter a valid email and password. ,,,
+,,3.               Click the ,,,
+,,"""Login"" button. ",,,
+TC-002,Invalid Login Attempt ,1.               Open the login page. ,"User should receive an ""Invalid login credentials"" error message. ",Passed. An error message was displayed. ,Passed 
+2,,2.               Enter invalid email or password. ,,,
+,,3.               Click the ,,,
+,,"""Login"" button. ",,,
+TC-003,Product ,1.               Navigate to the product listing page. ,Products should be displayed correctly. ,Passed. Products were fetched and displayed correctly. ,Passed 
+3,Routing ,2.               Trigger the API call to fetch products. ,,,
+TC-004,API Response Handling ,1. Trigger API call for product details. ,"Data should be displayed correctly, and ",Passed. API response handled and ,Passed 
+4,,,,,
+,,2. Ensure data is displayed correctly. ,errors should be handled. ,displayed as expected. ,
+TC-005,Empty Data Handling ,1. Trigger API with empty data. 2. Verify how empty responses are handled and displayed. ,Empty or invalid responses should be gracefully handled. ,Passed. The system handled empty responses without errors. ,Failed 
+5,,,,,
+TC-006,Form ,1.               Enter invalid data into the form fields. ,Form should not submit and display validation errors. ,Passed. ,Failed 
+6,Validation ,"2.               Click on ""Submit"". ",,Validation errors were correctly shown. ,
+TC-007,Page Load Performance ,1.               Open the product listing page. ,Page should load within 3 seconds. ,Passed. Page loaded in under 3 seconds. ,Passed 
+7,,2.               Measure load time with multiple products. ,,,
+TC-008,Security - Login Data Storage ,1.               Complete login. ,No sensitive data should be stored in localStorage. ,Passed. Sensitive data was not stored in localStorage. ,Failed 
+8,,2.               Check localStorage for sensitive information ,,,
+,,"(email, password). ",,,
+TC-009,Security - Token ,1.               Login with valid credentials. ,Token should be securely returned and stored for session use. ,Passed. Token was returned and used securely for session. ,Passed 
+9,Authentication ,2.               Check if a valid authentication token is returned. ,,,
+TC-010,Navigation and Routing ,1. Login and click on various navigation links. 2. Check if the routes are correct. ,Navigation should work seamlessly across pages. ,Passed. Routing worked smoothly across pages. ,Passed 
+10,,,,,
+TC-011,Product search ,Search for a product using keywords ,Relevant products appear ,Relevant products appear ,Passed 
+11,,,,,
+TC-012,Cart checkout ,Proceed to checkout with items in the cart ,Redirected to payment page ,Redirected successfully ,Failed 
+12,,,,,

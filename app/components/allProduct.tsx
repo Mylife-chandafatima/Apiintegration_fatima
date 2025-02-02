@@ -204,16 +204,16 @@ const ProductCard = ({ product }: { product: Product }) => (
           Sale
         </Badge>
       )}
-      <Link href={`/product/${product.id}`}>
-        <Image
-          src={product.image}
-          alt={product.title}
-          height={400}
-          width={400}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          aria-label={`View details of ${product.title}`}
-        />
-      </Link>
+<Link href={`/product/${product.id}`}>  
+  <Image  
+    src={product.image}  
+    alt={product.title}  
+    height={400}  
+    width={400}  
+    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"  
+    aria-label={`View details of ${product.title}`}  
+  />  
+</Link>
     </div>
     <div className="mt-4 flex items-center justify-between">
       <div>

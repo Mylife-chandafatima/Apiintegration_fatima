@@ -37,7 +37,7 @@ const ProductSlider = () => {
   };
 
   return (
-    <div className="relative py-16 bg-gray-50">
+    <div className="relative py-10 bg-gray-50">
       <div className="container mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-4">Featured Products</h2>
         <p className="text-lg text-gray-600">Browse through our top picks</p>
@@ -45,7 +45,7 @@ const ProductSlider = () => {
 
       <div className="relative">
         <div className="flex overflow-hidden justify-center">
-          <div className=" grid  lg:grid-cols-4 sm:grid-cols-1 ">
+          <div className=" grid  lg:grid-cols-4 sm:grid-cols-1 gap-10 ">
             {products.slice(currentIndex, currentIndex + 4).map((product) => (
               <div key={product.id} className=" p-4">
                 <div className="border rounded-lg shadow-lg overflow-hidden">
@@ -57,9 +57,9 @@ const ProductSlider = () => {
                   <div className="p-4">
                     <h2 className="text-lg font-semibold">{product.title}</h2>
                     <p className="text-xl font-bold">{`$${product.price}`}</p>
-                    {product.originalPrice && (
+                    {/* {product.originalPrice && (
                       <p className="line-through text-gray-500">{`$${product.originalPrice}`}</p>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>

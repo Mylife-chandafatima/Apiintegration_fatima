@@ -33,7 +33,9 @@ const Navbar = () => {
             Login
           </Link>
         </div>
-        <div className="hidden md:flex items-center gap-4 ml-auto mr-4">
+      
+        <div className="hidden md:flex items-center gap-4 ml-auto mr-4 bg-slate-300">
+       
          <Link href="/contact"> <span className="font-normal text-[#636270] text-[14px]">
             Contact:
           </span>
@@ -43,6 +45,7 @@ const Navbar = () => {
             (808) 555-0111
           </span>
         </div>
+       
         <button
           className="lg:hidden flex items-center justify-center p-2"
           onClick={toggleMenu}
